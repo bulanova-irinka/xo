@@ -4,7 +4,7 @@ import xogame.model.Player;
 
 public class Game {
 
-    private static final String gameName;
+    private static final String gameName = "XO";
 
     private Player[] players;
 
