@@ -1,20 +1,26 @@
 package xogame.view;
 
-import xogame.controller.Game;
+import xogame.controller.GameController;
 
 public class ConsoleView {
 
-    private final Game game;
+    private final GameController gameController = new GameController();
 
-    public ConsoleView(Game game) {
-        this.game = game;
+
+    public void showGameName(GameController gameController) {
+        System.out.println(gameController.getGameName());
     }
 
-    public void showGameName(Game game) {
-        System.out.println(game.getGameName());
+    public void showPlayersName(GameController gameControler) {
+        System.out.println(gameControler.getPlayers());
     }
 
-    public void showPlayersName(Game game) {
-        System.out.println(game.getPlayers());
+    public void showBoardLine() {
+        int i=0;
+        for (i=0; i<3; i += 1) {
+            System.out.println(gameController.getBoard().getFigures(0,i));
+        }
     }
+
+
 }
