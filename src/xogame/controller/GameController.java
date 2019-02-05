@@ -1,30 +1,25 @@
 package xogame.controller;
 
 import xogame.model.Board;
-import xogame.model.Figure;
 import xogame.model.Player;
 
 public class GameController {
 
     private static final String gameName = "XO";
 
-    private Player[] players = new Player [] {
-            new Player ("Max", new Figure ("X")),
-            new Player ("Ivan", new Figure ("O"))
-    };
+    private final Board board;
 
-    private final Board board = new Board();
+    public GameController(Board board) {
+        this.board = board;
+    }
+
+    private Player[] players = new Player [] {
+            //new Player ("Max", new Figure ("f1")),
+           // new Player ("Ivan", new Figure ("f2"))
+    };
 
     public String getGameName () {
         return gameName;
-    }
-
-    public Player currentPlayer() {
-        return null;
-    }
-
-    public boolean move(final int x, final int y) {
-        return false;
     }
 
     public Player[] getPlayers() {

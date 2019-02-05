@@ -1,16 +1,20 @@
 package xogame;
 
+import xogame.controller.GameController;
 import xogame.model.Board;
 import xogame.view.ConsoleView;
 
 public class Main {
 
     public static void main (String[] arg) {
-        ConsoleView consoleView = new ConsoleView();
 
-        Board board = new Board();
-        board.initArray();
-        consoleView.showBoardLine();
+        final Board board = new Board();
+
+        final GameController gameController = new GameController(board);
+
+        ConsoleView consoleView = new ConsoleView(gameController);
+
+        consoleView.start();
 
     }
 }
